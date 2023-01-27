@@ -41,7 +41,7 @@ const Friends = () => {
         <title>My Friends | ze.ci</title>
       </Head>
       <Container maxW="container.md" mt={5}>
-        <Link href="/" className={oMono.className}>
+        <Link href="https://ze.ci/" className={oMono.className}>
           &lt;- Navigate back to the homepage
         </Link>
       </Container>
