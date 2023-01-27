@@ -1,7 +1,7 @@
 import { Container, Divider, Link, Text, LinkBox, Box, LinkOverlay } from "@chakra-ui/react";
 import { Barlow, Inter, Overpass_Mono } from "@next/font/google";
 import Image from "next/image";
-import Heading from "@/components/heading";
+import Heading from "./components/heading";
 import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
