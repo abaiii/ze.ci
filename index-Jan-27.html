@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ze.ci | badly-pronounced this time</title>
+    <link rel="stylesheet" href="assets/tailwind.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Red+Hat+Display|Varela+Round|Overpass+Mono|Noto+Sans+SC">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Red Hat Display', 'Noto Sans SC'
+        }
+
+        .vr {
+            font-family: 'Varela Round', 'Noto Sans SC'
+        }
+
+        .avr a {
+            font-family: 'Varela Round';
+        }
+
+        code {
+            font-family: 'Overpass Mono';
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page 1 -->
+    <div class="main-container">
+        <div class="w-5/6 lg:w-2/5 flex justify-center items-center min-h-screen flex-col">
+            <img class="rounded-full mb-2" src="assets/avatar.webp" alt="The amazing avatar" width="128px"
+                height="128px">
+            <div class="text-center w-full avr ach">
+                <span class="block  text-xl font-semibold">Francie Jiang</span>
+                <a href="https://friends.ze.ci/">Friends</a> | <a href="https://blog.ze.ci/">Blog</a> | <a id="toggler"
+                    href="#">Darken</a>
+            </div>
+            <div class="w-full mt-5 text-lg vr ach">
+                <h2>Introduction?</h2>
+                Francie Jiang is a girl. And that's all. <br>
+                For more details... well... She is a senior high student preparing for her gaokao this year.
+                <h2>Why <code>ze.ci</code> ?</h2>
+                Firstly, <code>ze.ci</code> is relatively cheap among all four-letter domains (roughly $19 a year). <br>
+                Plus, If you happen to be a Chinese mandarin speaker, you might regard it as a pronunciation of
+                「这次」("this time" in Chinese)
+                with a southern accent, which happens to be one of the reasons she wanted to register this domain as her
+                birthday gift.
+                <h2>Equipments?</h2>
+                <ul>
+                    <li>- A PC dual-booting Windows 10 and Arch Linux. <br><span
+                            class="text-gray-50 dark:text-gray-800">-</span>&nbsp;After her gaokao she wants to give
+                        NixOS a try.</li>
+                    <li>- A broken HUAWEI P20 that she hadn't replaced for 5 years.</li>
+                    <li>- A HUAWEI MatePad Pro.</li>
+                </ul>
+                <h2>Contact?</h2>
+                Find she on <a href="https://t.me/ekyde">Telegram</a>.
+                <h2>Likes?</h2>
+                <ul>
+                    <li>- JavaScript</li>
+                    <li>- C++</li>
+                </ul>
+                <h2>Dislikes?</h2>
+                <ul>
+                    <li>- MILCH.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+    var toggler = document.querySelector('#toggler'), theme = 0, caption = ['Darken', 'Lighten']
+
+    const handleToggle = () => {
+        if (theme) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+        toggler.textContent = caption[Number(theme)]
+    }
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        theme = 1
+        handleToggle()
+    }
+    toggler.addEventListener('click', () => {
+        theme = !theme
+        
+        handleToggle()
+    })
+</script>
+
+</html>
